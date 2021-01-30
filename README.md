@@ -6,3 +6,7 @@ Breakdown of tasks:
 
 
 Terms: 
+mainTitle
+searchBar
+hotelResults
+weatherResults
