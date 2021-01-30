@@ -10,10 +10,30 @@
 </head>
 
 <body>
-    <h1 class="title is-1" style="">
-        Chris, Matt, Raffee, and Sarness' Super Amazing Trip Planner
-    </h1>
+        <div class="box container is-fluid">
+            <div id=mainTitle class= "container title is-1">
+            Chris, Matt, Raffee, and Sarness' Super Amazing Trip Planner
+        </div></div>
 
+        <div class="tile is-ancestor">
+        <div class="tile is-parent is-8 is-vertical">
+
+            <div class="tile is-child box content is-medium">
+                <input id=searchBar class="input" type="text" placeholder="Trip Location">
+            </input></div>
+
+            <div class="tile is-child box content is-medium">
+                <div id="hotelResults" class="">
+                These are the hotel results
+        </div></div></div>
+
+        <div class="tile is-parent is-4" id="hotelResultsTile">
+        <div class="tile is-child box content is-medium">
+            <div id="hotelResults" class="">
+            These are the weather results
+        </div></div></div>
+
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/hotelScript.js"></script> 
