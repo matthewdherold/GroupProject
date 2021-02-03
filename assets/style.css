@@ -1,0 +1,12 @@
+body {
+    padding: 3ch;
+}
+
+#mainTitle {
+    color: rgb(49, 138, 111);
+}
+
+#hotelResultsTile {
+    @media (max-width: 479px) float: right;
+
+}
