@@ -1,0 +1,48 @@
+body {
+    height: 100vh;
+    padding: 5ch;
+    background-color: rgb(195, 235, 241);
+}
+
+.button {
+    margin-right: 1ch;
+    width: 8ch;
+    background-color: rgb(195, 235, 241);
+    border-color: rgb(53, 61, 38);
+}
+
+.input {
+    margin-right: 1ch;
+}
+
+.dropdown-content {
+    min-width: max-content;
+    align-content: center;
+}
+
+.box {
+    background-color: rgb(151, 238, 190);
+}
+
+#mainTitleBox {
+    width: fit-content;
+}
+
+#mainTitle {
+    color: rgb(49, 138, 111);
+    text-align: center;
+}
+
+#checkOutDate, #checkInDate, #numberGuests {
+    width: 14ch;
+}
+
+#searchBar {
+    width: 30ch;
+    background-color: rgb(195, 235, 241);
+    border-color: rgb(53, 61, 38);
+}
+
+#surpriseMessage {
+    float: right;
+}
