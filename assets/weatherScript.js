@@ -1,13 +1,13 @@
-var searchButton = $(".searchButton");
+var searchButton = $("#searchButton");
 var apiKey = "2ab902a0fe313d71d91734e79f858556";
 var keyCount = 0;
 
 searchButton.click(function () {
-	var userInput = $(".userInput").val();
-	var urlfiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&Appid=" + apiKey + "&units=imperial";
+	var searchBar = $("#searchBar").val();
+	var urlfiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchBar + "&exclude=minutely,hourly&Appid=" + apiKey + "&units=imperial";
 
-	if (userInput == "") {
-		console.log(userInput);
+	if (searchBar !== "") {
+		console.log(searchBar);
 	}else {
 		$.ajax({
             url: urlfiveDay,
