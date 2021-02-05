@@ -31,8 +31,7 @@ filterButton.on( "click", function() {
 });
 
 sortButton.on( "click", function() {
-    // sortDrop = $("#sortDrop");
-    // filterDrop = $("#filterDrop");
+
     if (filterDrop.hasClass("dropdown is-active") === true) {
         filterDrop.removeClass("is-active");
     };
@@ -45,21 +44,21 @@ sortButton.on( "click", function() {
 
 bestMatch.on( "click", function() {
 
-    sortCriteria.text("Best Match");
+    sortCriteria.text("Sort By: Best Match");
     sortDrop.removeClass("is-active");
     return (sortButton)
 });
 
 highestRated.on( "click", function() {
 
-    sortCriteria.text("Highest Rated");
+    sortCriteria.text("Sort By: Highest Rated");
     sortDrop.removeClass("is-active");
     return (sortButton)
 });
 
 lowestPrice.on( "click", function() {
 
-    sortCriteria.text("Lowest Price");
+    sortCriteria.text("Sort By: Lowest Price");
     sortDrop.removeClass("is-active");
     return (sortButton)
 });
@@ -71,4 +70,5 @@ $("#searchButton").on( "click", function() {
 $("#surpriseButton").on( "click", function() {
     console.log("surprise");
   });
+
 
