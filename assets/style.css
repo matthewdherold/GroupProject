@@ -24,6 +24,8 @@ body {
     background-color: rgb(151, 238, 190);
 }
 
+
+
 #mainTitleBox {
     width: fit-content;
 }
@@ -46,3 +48,29 @@ body {
 #surpriseMessage {
     float: right;
 }
+
+#sortCriteria {
+    align-self: center;
+}
+
+#forecastList {
+    align-self: center;
+}
+
+#weatherResults {
+    align-self: center;
+}
+
+#weatherResultsBox {
+    overflow-y:auto;
+    height: 85vh
+}
+
+#hotelResults {
+    align-self: center;
+}
+
+#hotelResultsBox {
+    overflow-y:auto;
+}
+

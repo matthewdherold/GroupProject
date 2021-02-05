@@ -19,7 +19,7 @@
 
     <div class="tile is-ancestor pt-2">
         <div class="tile is-vertical is-9 pb-5 pr-5">
-            <div class="tile is-vertical box content is-medium">
+            <div id="searchBox" class="is-vertical box content is-medium">
                 <div class="title is-3">
                     Where do you want to go?
                     <p id="surpriseMessage" class="is-size-6">
@@ -125,9 +125,6 @@
                                     Sort By
                                 </span>
                             </button>
-                            <div id="sortCriteria">
-                                Best Match
-                            </div>
                         </div>
                         <div class="dropdown-menu" id="dropdown-menu3" role="menu">
                             <div class="dropdown-content">
@@ -162,16 +159,25 @@
 
 
 
-            <div class="tile box content is-medium" id="hotelResultsBox">
+            <div class="tile is-vertical box content is-medium" id="hotelResultsBox">
                 <div class="title is-3" id="hotelResults">
                     Hotel Results
+                </div>
+                <div id="sortCriteria" class="title is-7">
+                    Sort By: Best Match
+                </div>
+                <div>
+                    
                 </div>
             </div>
         </div>
 
-        <div class="tile is-3 box content is-medium" id="weatherResultsBox">
+        <div class="tile is-vertical is-3 box content is-medium" id="weatherResultsBox">
             <div class="title is-3" id="weatherResults">
                 Weather Results
+            </div>
+            <div id="forecastList">
+               
             </div>
         </div>
     </div>
