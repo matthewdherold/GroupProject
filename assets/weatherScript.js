@@ -8,8 +8,8 @@ searchButton.click(function () {
 	var urlfiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&Appid=" + apiKey + "&units=imperial";
 
 
-	if (searchBar !== "") {
-		console.log(searchBar);
+	if (userInput !== "") {
+		console.log(userInput);
 	}else {
         console.log(userInput);
 		$.ajax({
