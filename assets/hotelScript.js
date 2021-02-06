@@ -15,7 +15,7 @@ searchButton.click(function(){
             "url": "https://hotels4.p.rapidapi.com/locations/search?query=" + userInput + "&locale=en_US",
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "24e0114115msha91991ed1a11cd9p1e13b9jsn62259ea0d893",
+                "x-rapidapi-key": "2e36b2ec67msh90560bfe478078bp16431bjsn26c4c7c3caf9",
                 "x-rapidapi-host": "hotels4.p.rapidapi.com"
             }
         };
@@ -30,7 +30,7 @@ searchButton.click(function(){
                 "url": "https://hotels4.p.rapidapi.com/properties/list?destinationId="+ destinationId + "&pageNumber=1&checkIn=2020-01-08&checkOut=2020-01-15&pageSize=25&adults1=1&currency=USD&locale=en_US&sortOrder=PRICE",
                 "method": "GET",
                 "headers": {
-                    "x-rapidapi-key": "24e0114115msha91991ed1a11cd9p1e13b9jsn62259ea0d893",
+                    "x-rapidapi-key": "2e36b2ec67msh90560bfe478078bp16431bjsn26c4c7c3caf9",
                     "x-rapidapi-host": "hotels4.p.rapidapi.com"
                 }
             };
@@ -38,8 +38,8 @@ searchButton.click(function(){
                 console.log(data);
                 for (let i = 0; i < 5; i++) {
                     console.log(data.data.body.searchResults.results[i].name);
-                    var hotelName = data.data.body.searchResults.results[i].name
-                    var addRess = data.data.body.searchResults.results[i].address
+                    var hotelName = data.data.body.searchResults.results[i].name;
+                    var addRess = data.data.body.searchResults.results[i].address;
                     var streetAdd = addRess.streetAddress;
                     var Local = addRess.locality;
                     var regn = addRess.region;
@@ -54,6 +54,7 @@ searchButton.click(function(){
 
                     console.log(data.data.body.searchResults.results[i].thumbnailUrl);
                     var photo = data.data.body.searchResults.results[i].thumbnailUrl;
+
                     $("#hotelResults").append( 
                                                         "<div class='results' style='background-color: rgb(195, 235, 241); padding: 3ch;'>" +
                                                         "<h2>" + hotelName + "</h2>" + 
@@ -63,6 +64,7 @@ searchButton.click(function(){
                                                         "<p>" + "Rating: " + rating + "/5" + "</p>" +
                                                         "</div>"
                                                     );
+
                     
                 };
             });
