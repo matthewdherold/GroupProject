@@ -1,3 +1,6 @@
+Live Url: https://matthewdherold.github.io/GroupProject/
+
+
 Title: Hotel/Weather<br>
 Desc: Uses first API<br> 
 User Story: Given that I have a location to search for, I will recieve a list of hotels as well as a weather forecast for that location<br>

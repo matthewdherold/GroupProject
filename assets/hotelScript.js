@@ -1,8 +1,8 @@
 var searchButton = $("#searchButton");
+var searchBar = $("#searchBar")
 
-
-searchButton.click(function () {
-
+searchButton.click(function(){
+    $("#hotelResults").empty()
     var userInput = $("#searchBar").val();
 
     
@@ -54,20 +54,20 @@ searchButton.click(function () {
 
                     console.log(data.data.body.searchResults.results[i].thumbnailUrl);
                     var photo = data.data.body.searchResults.results[i].thumbnailUrl;
-                    $("#sortCriteria").append("<div'>" + 
+                    $("#hotelResults").append( 
+                                                        "<div class='results' style='background-color: rgb(195, 235, 241); padding: 3ch;'>" +
                                                         "<h2>" + hotelName + "</h2>" + 
+                                                        "<img src =" + photo + ">" +
                                                         "<p>" + "Address: " + streetAdd + " " + Local + " " + regn + ", " + ZipCode + "</p>" + 
                                                         "<p>" + "Price: " + price + "</p>" + 
-                                                        "<p>" + "Rating: " + rating + "</p>" +
-                                                        "<a>" + photo + "</a>" + 
-                                                    "</div>");
+                                                        "<p>" + "Rating: " + rating + "/5" + "</p>" +
+                                                        "</div>"
+                                                    );
                     
-                }
-        
+                };
             });
         });
-    }
-    
-
+    };
 });
 
+searchButton.click(theFunction);
