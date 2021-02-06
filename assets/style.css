@@ -1,4 +1,4 @@
-body {
+html {
     height: 100vh;
     padding: 5ch;
     background-color: rgb(195, 235, 241);
@@ -66,11 +66,11 @@ body {
     height: 85vh
 }
 
-#hotelResults {
-    align-self: center;
-}
-
 #hotelResultsBox {
     overflow-y:auto;
+}
+
+#hotelResultsTitle {
+    align-self: center;
 }
 
