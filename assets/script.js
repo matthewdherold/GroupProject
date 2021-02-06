@@ -10,8 +10,14 @@ highestRated = $("#highestRated")
 lowestPrice = $("#lowestPrice")
 
 searchButton = $("#searchButton")
-
+searchBar = $("#searchBar")
 surpriseButton = $("#surpriseButton")
+
+searchBar.keypress(function(event) { 
+    if (event.keyCode === 13) { 
+        searchButton.click(); 
+    } 
+});
 
 $(".body").on("click", function() {
     sortDrop.removeClass("is-active");
@@ -70,5 +76,3 @@ $("#searchButton").on( "click", function() {
 $("#surpriseButton").on( "click", function() {
     console.log("surprise");
   });
-
-
