@@ -2,13 +2,13 @@ var searchButton = $("#searchButton");
 var apiKey = "2ab902a0fe313d71d91734e79f858556";
 var keyCount = 0;
 
-searchButton.click(function () {
-   
+searchButton.click(function () { 
     var forecastList = $("#forecastList")
 	var userInput = $("#searchBar").val();
 	var urlfiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + userInput + "&Appid=" + apiKey + "&units=imperial";
 
-	if (userInput == "") {
+
+	if (userInput !== "") {
 		console.log(userInput);
 	}else {
         console.log(userInput);
