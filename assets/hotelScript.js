@@ -69,5 +69,3 @@ searchButton.click(function(){
         });
     };
 });
-
-searchButton.click(theFunction);
