@@ -55,9 +55,11 @@ searchButton.click(function(){
                     console.log(data.data.body.searchResults.results[i].thumbnailUrl);
                     var photo = data.data.body.searchResults.results[i].thumbnailUrl;
 
+                    var hotelID = data.data.body.searchResults.results[i].id
+
                     $("#hotelResults").append( 
                                                         "<div class='results' style='background-color: rgb(195, 235, 241); padding: 3ch;'>" +
-                                                        "<h2>" + hotelName + "</h2>" + 
+                                                        "<h2><a href='https://www.hotels.com/ho" + hotelID + "/'>" + hotelName + "</a>" + "</h2>" + 
                                                         "<img src =" + photo + ">" +
                                                         "<p>" + "Address: " + streetAdd + " " + Local + " " + regn + ", " + ZipCode + "</p>" + 
                                                         "<p>" + "Price: " + price + "</p>" + 
@@ -65,7 +67,6 @@ searchButton.click(function(){
                                                         "</div>"
                                                     );
 
-                    
                 };
             });
         });
