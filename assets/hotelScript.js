@@ -1,76 +1,75 @@
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://hotels4.p.rapidapi.com/locations/search?query=new%20york&locale=en_US",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "c50f8e3cedmshc2750e74357945fp1b0b2ajsn6ffdaf598689",
-		"x-rapidapi-host": "hotels4.p.rapidapi.com"
-	}
-};
+var searchButton = $("#searchButton");
+var searchBar = $("#searchBar")
 
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id=1178275040",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "78094caf75msh9b17bb9200541e9p14a947jsn016bc2046184",
-		"x-rapidapi-host": "hotels4.p.rapidapi.com"
-	}
-};
+searchButton.click(function(){
+    $("#hotelResults").empty()
+    var userInput = $("#searchBar").val();
 
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://hotels4.p.rapidapi.com/properties/get-details?id=424023&locale=en_US&currency=USD&checkOut=2020-01-15&adults1=1&checkIn=2020-01-08",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "78094caf75msh9b17bb9200541e9p14a947jsn016bc2046184",
-		"x-rapidapi-host": "hotels4.p.rapidapi.com"
-	}
-};
+    
+	if (userInput !== "") {
+        console.log(userInput);
+        
+        const settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://hotels4.p.rapidapi.com/locations/search?query=" + userInput + "&locale=en_US",
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": "2e36b2ec67msh90560bfe478078bp16431bjsn26c4c7c3caf9",
+                "x-rapidapi-host": "hotels4.p.rapidapi.com"
+            }
+        };
+        $.ajax(settings).done(function (data) {
+                console.log(data);
+                console.log(data.suggestions[0].entities[0].destinationId);
+                var destinationId = data.suggestions[0].entities[0].destinationId;
+                console.log(destinationId);
+                const settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "https://hotels4.p.rapidapi.com/properties/list?destinationId="+ destinationId + "&pageNumber=1&checkIn=2020-01-08&checkOut=2020-01-15&pageSize=25&adults1=1&currency=USD&locale=en_US&sortOrder=PRICE",
+                "method": "GET",
+                "headers": {
+                    "x-rapidapi-key": "2e36b2ec67msh90560bfe478078bp16431bjsn26c4c7c3caf9",
+                    "x-rapidapi-host": "hotels4.p.rapidapi.com"
+                }
+            };
+            $.ajax(settings).done(function (data) {
+                console.log(data);
+                for (let i = 0; i < 5; i++) {
+                    console.log(data.data.body.searchResults.results[i].name);
+                    var hotelName = data.data.body.searchResults.results[i].name;
+                    var addRess = data.data.body.searchResults.results[i].address;
+                    var streetAdd = addRess.streetAddress;
+                    var Local = addRess.locality;
+                    var regn = addRess.region;
+                    var ZipCode = addRess.postalCode;
+                    console.log(streetAdd + " " + Local + " " + regn + ", " + ZipCode);
 
-const settings = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://hotels4.p.rapidapi.com/get-meta-data",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "78094caf75msh9b17bb9200541e9p14a947jsn016bc2046184",
-		"x-rapidapi-host": "hotels4.p.rapidapi.com"
-	}
-};
+                    console.log(data.data.body.searchResults.results[i].ratePlan.price.current);
+                    var price = data.data.body.searchResults.results[i].ratePlan.price.current;
 
-var unirest = require("unirest");
+                    console.log(data.data.body.searchResults.results[i].starRating);
+                    var rating = data.data.body.searchResults.results[i].starRating;
 
-var req = unirest("GET", "https://hotels4.p.rapidapi.com/properties/list");
+                    console.log(data.data.body.searchResults.results[i].thumbnailUrl);
+                    var photo = data.data.body.searchResults.results[i].thumbnailUrl;
 
-req.query({
-	"destinationId": "1506246",
-	"pageNumber": "1",
-	"checkIn": "2020-01-08",
-	"checkOut": "2020-01-15",
-	"pageSize": "25",
-	"adults1": "1",
-	"currency": "USD",
-	"locale": "en_US",
-	"sortOrder": "PRICE"
+                    $("#hotelResults").append( 
+                                                        "<div class='results' style='background-color: rgb(195, 235, 241); padding: 3ch;'>" +
+                                                        "<h2>" + hotelName + "</h2>" + 
+                                                        "<img src =" + photo + ">" +
+                                                        "<p>" + "Address: " + streetAdd + " " + Local + " " + regn + ", " + ZipCode + "</p>" + 
+                                                        "<p>" + "Price: " + price + "</p>" + 
+                                                        "<p>" + "Rating: " + rating + "/5" + "</p>" +
+                                                        "</div>"
+                                                    );
+
+                    
+                };
+            });
+        });
+    };
 });
 
-req.headers({
-	"x-rapidapi-key": "78094caf75msh9b17bb9200541e9p14a947jsn016bc2046184",
-	"x-rapidapi-host": "hotels4.p.rapidapi.com",
-	"useQueryString": true
-});
-
-
-req.end(function (res) {
-	if (res.error) throw new Error(res.error);
-
-	console.log(res.body);
-});
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
+searchButton.click(theFunction);
