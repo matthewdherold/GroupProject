@@ -31,7 +31,7 @@ Hotels: "https://hotels4.p.rapidapi.com/locations/search?query=new%20york&locale
 ```
 
 ##Live Url:
-```
+
 https://matthewdherold.github.io/GroupProject/
-```
+
 
