@@ -1,3 +1,4 @@
+// Global Variables. 
 var searchButton = $("#searchButton");
 var searchBar = $("#searchBar");
 var today = new Date();
@@ -10,6 +11,7 @@ tomorrow = yyyy + '-' + mm + '-' + (dd++)
 var checkIn = today
 var adults = 1
 
+// Search Button
 searchButton.click(function () {
     $("#hotelResults").empty()
     var userInput = $("#searchBar").val();
@@ -39,10 +41,11 @@ searchButton.click(function () {
     console.log(checkIn)
     console.log(checkOut)
     console.log(adults)
-
+    // If user input is not an empty string.
     if (userInput !== "") {
         console.log(userInput);
 
+        // Getting the data from Hotels API. 
         const settings = {
             "async": true,
             "crossDomain": true,
@@ -53,7 +56,7 @@ searchButton.click(function () {
                 "x-rapidapi-host": "hotels4.p.rapidapi.com"
             }
         };
-
+        // Passing the data to the get the destination id.
         $.ajax(settings).done(function (data) {
             console.log(data);
             console.log(data.suggestions[0].entities[0].destinationId);
@@ -72,6 +75,7 @@ searchButton.click(function () {
 
             $.ajax(settings).done(function (data) {
                 console.log(data);
+                // Looping through city informations. 
                 for (let i = 0; i < 10; i++) {
                     console.log(data.data.body.searchResults.results[i].name);
                     var hotelName = data.data.body.searchResults.results[i].name;
@@ -93,6 +97,7 @@ searchButton.click(function () {
 
                     var hotelID = data.data.body.searchResults.results[i].id
 
+                    // Appending data to HTML
                     $("#hotelResults").append(
                         "<div class='results' style='padding: 3ch;'>" +
                         "<h2><a href='https://www.hotels.com/ho" + hotelID + "/'>" + hotelName + "</a>" + "</h2>" +
