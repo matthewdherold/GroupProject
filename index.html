@@ -31,13 +31,13 @@
                 </div>
                 <div class="tile">
                     <div class="pb-3">
-                    <input id=searchBar class="input" type="text" placeholder="Trip Location">
-                    </input>
-                    <button id="searchButton" class="button" aria-haspopup="true" aria-controls="searchButton">
-                        <span>
-                            Search
-                        </span>
-                    </button>
+                        <input id=searchBar class="input" type="text" placeholder="Trip Location">
+                        </input>
+                        <button id="searchButton" class="button" aria-haspopup="true" aria-controls="searchButton">
+                            <span>
+                                Search
+                            </span>
+                        </button>
                     </div>
 
                     <div id="filterDrop" class="dropdown">
@@ -66,7 +66,8 @@
                                                                 From:
                                                             </td>
                                                             <td class="">
-                                                                <input id=checkInDate class="input" type="text"placeholder="MM/DD/YY">
+                                                                <input id=checkInDate class="input" type="text"
+                                                                    placeholder="YYYY-MM-DD">
                                                                 </input>
                                                             </td>
                                                         </tr>
@@ -75,7 +76,8 @@
                                                                 To:
                                                             </td>
                                                             <td class="">
-                                                                <input id=checkOutDate class="input" type="text"placeholder="MM/DD/YY">
+                                                                <input id=checkOutDate class="input" type="text"
+                                                                    placeholder="YYYY-MM-DD">
                                                                 </input>
                                                             </td>
                                                         </tr>
@@ -89,27 +91,12 @@
                                                     <p>
                                                         How many guests are you bringing?
                                                     </p>
-                                                    <input id=numberGuests class="input" type="text" placeholder="99">
+                                                    <input id=numberGuests class="input" type="text" placeholder="1-9">
                                                     </input>
                                                 </div>
 
                                             </div>
-                                            <div class="tile is-vertical content is-medium">
-                                                <div class="title is-4">
-                                                    <p>
-                                                        Pets allowed?
-                                                    </p>
-                                                    <label class="checkbox title is-6">
-                                                        <input type="checkbox">
-                                                        Dogs
-                                                    </label>
-                                                    <label class="checkbox title is-6">
-                                                        <input type="checkbox">
-                                                        Cats
-                                                    </label>
-                                                    
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -130,18 +117,18 @@
                             <div class="dropdown-content">
                                 <a id="bestMatch" class="dropdown-item">
                                     <p>
-                                    Best Match
-                                </p>
+                                        Best Match
+                                    </p>
                                 </a>
                                 <a id="highestRated" class="dropdown-item">
                                     <p>
-                                    Highest rated
-                                </p>
+                                        Highest rated
+                                    </p>
                                 </a>
                                 <a id="lowestPrice" class="dropdown-item">
                                     <p>
-                                    Lowest Price
-                                </p>
+                                        Lowest Price
+                                    </p>
                                 </a>
                             </div>
                         </div>
@@ -165,8 +152,8 @@
                 <div id="sortCriteria" class="title is-7">
                     Sort By: Best Match
                 </div>
-                <div  id="hotelResults">
-                    
+                <div id="hotelResults">
+
                 </div>
             </div>
         </div>
@@ -176,13 +163,13 @@
                 Weather Results
             </div>
             <div id="forecastList">
-               
+
             </div>
         </div>
     </div>
 
 
-<img src="" alt="">
+    <img src="" alt="">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/hotelScript.js"></script>

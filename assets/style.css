@@ -24,8 +24,6 @@ html {
     background-color: rgb(151, 238, 190);
 }
 
-
-
 #mainTitleBox {
     width: fit-content;
 }
@@ -41,8 +39,8 @@ html {
 
 #searchBar {
     width: 30ch;
-    background-color: rgb(195, 235, 241);
     border-color: rgb(53, 61, 38);
+    background-color: rgb(195, 235, 241);
 }
 
 #surpriseMessage {
@@ -63,7 +61,7 @@ html {
 
 #weatherResultsBox {
     overflow-y:auto;
-    height: 85vh
+    height: 80vh
 }
 
 #hotelResultsBox {
