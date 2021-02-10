@@ -24,7 +24,7 @@ searchButton.click(function () {
         adults = $("#numberGuests").val()
     }
     var sortCriteria = $("sortCriteria").val()
-    var sort = "PRICE"
+    var sort = "BEST_SELLER"
 
     if (sortCriteria = "Sort By: Best Match") {
         sort = "BEST_SELLER"
