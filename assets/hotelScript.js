@@ -1,13 +1,5 @@
 var searchButton = $("#searchButton");
 var searchBar = $("#searchBar");
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0');
-var yyyy = today.getFullYear();
-today = yyyy + '-' + mm + '-' + dd;
-var tomorrow = new Date();
-tomorrow = yyyy + '-' + mm + '-' + (dd++)
-var checkIn = today
 var adults = 1
 
 searchButton.click(function () {
@@ -23,19 +15,20 @@ searchButton.click(function () {
     if ($("#numberGuests").val() != undefined && $("#numberGuests").val() > 0 && $("#numberGuests").val() < 10) {
         adults = $("#numberGuests").val()
     }
-    var sortCriteria = $("sortCriteria").val()
-    var sort = "BEST_SELLER"
+    var criteria = ""
+    criteria = $("#sortCriteria")[0].childNodes[0].textContent
+    var sort = ""
 
-    if (sortCriteria = "Sort By: Best Match") {
+    if (criteria = "Sort By: Best Match") {
         sort = "BEST_SELLER"
-    };
-    if (sortCriteria = "Sort By: Highest Rated") {
+    } else if (criteria = "Sort By: Highest Rated") {
         sort = "STAR_RATING_HIGHEST_FIRST"
-    };
-    if (sortCriteria = "Sort By: Lowest Price") {
+    } else {
         sort = "PRICE"
     };
 
+    console.log(sort)
+    console.log(criteria)
     console.log(checkIn)
     console.log(checkOut)
     console.log(adults)
@@ -49,7 +42,7 @@ searchButton.click(function () {
             "url": "https://hotels4.p.rapidapi.com/locations/search?query=" + userInput + "&locale=en_US",
             "method": "GET",
             "headers": {
-                "x-rapidapi-key": "2e36b2ec67msh90560bfe478078bp16431bjsn26c4c7c3caf9",
+                "x-rapidapi-key": "c50f8e3cedmshc2750e74357945fp1b0b2ajsn6ffdaf598689",
                 "x-rapidapi-host": "hotels4.p.rapidapi.com"
             }
         };
@@ -65,7 +58,7 @@ searchButton.click(function () {
                 "url": "https://hotels4.p.rapidapi.com/properties/list?destinationId=" + destinationId + "&pageNumber=1&checkIn=" + checkIn + "&checkOut=" + checkOut + "&pageSize=25&adults1=" + adults + "&currency=USD&locale=en_US&sortOrder=" + sort,
                 "method": "GET",
                 "headers": {
-                    "x-rapidapi-key": "2e36b2ec67msh90560bfe478078bp16431bjsn26c4c7c3caf9",
+                    "x-rapidapi-key": "c50f8e3cedmshc2750e74357945fp1b0b2ajsn6ffdaf598689",
                     "x-rapidapi-host": "hotels4.p.rapidapi.com"
                 }
             };
@@ -81,10 +74,11 @@ searchButton.click(function () {
                     var regn = addRess.region;
                     var ZipCode = addRess.postalCode;
                     console.log(streetAdd + " " + Local + " " + regn + ", " + ZipCode);
-
+                    var price = ""
+                    if (data.data.body.searchResults.results[i].ratePlan) {
                     console.log(data.data.body.searchResults.results[i].ratePlan.price.current);
-                    var price = data.data.body.searchResults.results[i].ratePlan.price.current;
-
+                    price = data.data.body.searchResults.results[i].ratePlan.price.current;
+                    };
                     console.log(data.data.body.searchResults.results[i].starRating);
                     var rating = data.data.body.searchResults.results[i].starRating;
 

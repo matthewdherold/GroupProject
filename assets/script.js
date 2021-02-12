@@ -46,6 +46,7 @@ sortButton.click(function () {
 
 bestMatch.click(function () {
 
+    sortCriteria.empty()
     sortCriteria.text("Sort By: Best Match");
     sortDrop.removeClass("is-active");
     return (sortButton)
@@ -53,6 +54,7 @@ bestMatch.click(function () {
 
 highestRated.click(function () {
 
+    sortCriteria.empty()
     sortCriteria.text("Sort By: Highest Rated");
     sortDrop.removeClass("is-active");
     return (sortButton)
@@ -60,6 +62,7 @@ highestRated.click(function () {
 
 lowestPrice.click(function () {
 
+    sortCriteria.empty()
     sortCriteria.text("Sort By: Lowest Price");
     sortDrop.removeClass("is-active");
     return (sortButton)
